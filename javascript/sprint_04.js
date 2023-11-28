@@ -114,7 +114,16 @@ document.querySelector('.b-11').addEventListener('click', function () {
 //то функция возвращает false, если больше to возвращает true. Пароль должен содержать минимум один символ в верхнем регистре.
 // Тип данных функции, аргументы и типы аргументов укажите самостоятельно. Задание решается без регулярных выражений!
 function f12(pass) {
-    return ''; // удалите данную строку при написании решения
+    if (pass.length > 8) {
+        for (let i = 0; i < pass.length; i++) {
+            if (pass[i].toUpperCase() == pass[i]) {
+                return true;
+            }
+        }
+    }
+    else {
+        return false;
+    }
 }
 document.querySelector('.b-12').addEventListener('click', function () {
     document.querySelector('.out-12').textContent = String(f12('drXenonBloom'));
@@ -134,7 +143,8 @@ document.querySelector('.b-13').addEventListener('click', function () {
 // Давайте напишем теперь классическую функцию. Функция возвращает результат деления первого числа на второе. 
 //Однако добавим проверку. Если второй аргумент равен нулю - то возвращается false. Типы функции и аргументов напишите самостоятельно.
 function f14(a, b) {
-    return ''; // удалите данную строку при написании решения
+    let res = a / b;
+    return (b == 0) ? false : res;
 }
 document.querySelector('.b-14').addEventListener('click', function () {
     document.querySelector('.out-14').textContent = String(f14(15, 0));

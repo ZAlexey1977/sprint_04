@@ -41,11 +41,12 @@ document.querySelector('.b-4').addEventListener('click', function () {
 // Внимание здесь и далее в шаблоне функции может быть строка return ''. Данная строка нужна чтобы компилятор не ругался на функцию.
 // Когда вы будете писать код функции удалите данную строку.
 let s5 = 'abcdefg';
-function f05() {
-    return ''; // удалите данную строку при написании решения
+function f05(str) {
+    let num = Math.floor(Math.random() * str.length);
+    return s5[num];
 }
 document.querySelector('.b-5').addEventListener('click', function () {
-    document.querySelector('.out-5').textContent = f05();
+    document.querySelector('.out-5').textContent = f05(s5);
 });
 // Task 06
 // Напишите функцию f06, которая возвращает максимальное из трех чисел n61, n62, n63. Тип данных функции укажите явно. 
@@ -53,7 +54,14 @@ let n61 = 33;
 let n62 = 55;
 let n63 = 42;
 function f06() {
-    return ''; // удалите данную строку при написании решения
+    let max = n61;
+    if (max < n62) {
+        max = n62;
+    }
+    if (max < n63) {
+        max = n63;
+    }
+    return max;
 }
 document.querySelector('.b-6').addEventListener('click', function () {
     document.querySelector('.out-6').textContent = String(f06());

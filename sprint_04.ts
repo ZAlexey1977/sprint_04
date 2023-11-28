@@ -55,12 +55,13 @@ document.querySelector('.b-4').addEventListener('click', function (): void {
 
 let s5: string = 'abcdefg';
 
-function f05() {
-   return ''; // удалите данную строку при написании решения
+function f05(str : string) : string {
+    let num : number = Math.floor(Math.random() * str.length);
+   return s5[num]; 
 }
 
 document.querySelector('.b-5').addEventListener('click', function (): void {
-    document.querySelector('.out-5').textContent = f05();
+    document.querySelector('.out-5').textContent = f05(s5);
 });
 
 
@@ -71,8 +72,17 @@ let n61: number = 33;
 let n62: number = 55;
 let n63: number = 42;
 
-function f06() {
-    return ''; // удалите данную строку при написании решения
+function f06() : number {
+    let max : number = n61;
+    
+    if (max < n62){
+        max = n62;
+    } 
+    if (max < n63){
+        max = n63;
+    }
+   
+    return max; 
 }
 
 document.querySelector('.b-6').addEventListener('click', function (): void {

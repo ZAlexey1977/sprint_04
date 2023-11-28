@@ -69,6 +69,8 @@ document.querySelector('.b-6').addEventListener('click', function () {
 // Task 07
 // Напишите процедуру f07, которая выводит случайное целое число от 150 до 170 в .out-7. Тип данных процедуры - укажите самостоятельно.
 function f07() {
+    let num = Math.round(Math.random() * (160 - 150) + 150);
+    document.querySelector('.out-7').textContent = String(num);
 }
 document.querySelector('.b-7').addEventListener('click', f07);
 // Task 08
@@ -77,7 +79,7 @@ document.querySelector('.b-7').addEventListener('click', f07);
 function f08(a, b) {
     return a + b;
 }
-//  console.log(f08(5, 6));
+// console.log(f08(5, 6));
 // Task 09
 // В TS, в отличие от JS проводится контроль числа аргументов. Т.е. если в JS передать большее число аргументов чем положено,
 // то ошибки не будет. А вот в TS так делать нельзя. Удалите комментарий со строки запуска и посмотрите как поведет себя компилятор.
@@ -85,21 +87,24 @@ function f08(a, b) {
 function f09(a, b) {
     return a + b;
 }
-//  console.log(f09(5, 6, 7));
+// console.log(f09(5, 6, 7));
 // Task 10
 // Напишите функцию f10, которая принимает 4 числа и возвращает меньшее из них. Тип данных функции, 
 //аргументы и типы аргументов укажите самостоятельно.
 function f10(a, b, c, d) {
-    return ''; // удалите данную строку при написании решения
+    let ar = [...arguments];
+    ar.sort((a, b) => { return a - b; });
+    return ar[0]; // удалите данную строку при написании решения
 }
 document.querySelector('.b-10').addEventListener('click', function () {
-    document.querySelector('.out-10').textContent = String(f10(33, 22, 34, 17));
+    document.querySelector('.out-10').textContent = String(f10(33, 22, 44, 17));
 });
 // Task 11
 // Напишите функцию, которая принимает два аргумента и возвращает целое случайное число от первого аргумента включительно
 // до второго аргумента включительно. Тип функции и аргументов задайте самостоятельно.
 function f11(a, b) {
-    return ''; // удалите данную строку при написании решения
+    let num = Math.round(Math.random() * (b - a) + a);
+    return num; // удалите данную строку при написании решения
 }
 document.querySelector('.b-11').addEventListener('click', function () {
     document.querySelector('.out-11').textContent = String(f11(1000, 1100));
